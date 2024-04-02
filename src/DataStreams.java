@@ -4,12 +4,9 @@ import java.nio.file.*;
 import java.util.stream.*;
 
 public class DataStreams extends JFrame {
-    private JTextArea originalTextArea = new JTextArea();
-    private JTextArea filteredTextArea = new JTextArea();
-    private JTextField searchField = new JTextField(20);
-    private JButton loadButton = new JButton("Load a file");
-    private JButton searchButton = new JButton("Search the file");
-    private JButton quitButton = new JButton("Quit");
+    private final JTextArea originalTextArea = new JTextArea();
+    private final JTextArea filteredTextArea = new JTextArea();
+    private final JTextField searchField = new JTextField(20);
     private Path filePath;
 
     public DataStreams() {
@@ -21,8 +18,11 @@ public class DataStreams extends JFrame {
         add(new JScrollPane(filteredTextArea), BorderLayout.EAST);
         JPanel panel = new JPanel();
         panel.add(searchField);
+        JButton loadButton = new JButton("Load a file");
         panel.add(loadButton);
+        JButton searchButton = new JButton("Search the file");
         panel.add(searchButton);
+        JButton quitButton = new JButton("Quit");
         panel.add(quitButton);
         add(panel, BorderLayout.SOUTH);
         originalTextArea.setEditable(false);
